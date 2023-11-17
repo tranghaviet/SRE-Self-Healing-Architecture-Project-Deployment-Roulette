@@ -1,0 +1,18 @@
+tranghv•~/learning/SRE-Self-Healing-Architecture-Project-Deployment-Roulette(master⚡)» kubectl get pods --all-namespaces
+NAMESPACE     NAME                           READY   STATUS    RESTARTS   AGE
+kube-system   aws-node-7862q                 2/2     Running   0          83m
+kube-system   aws-node-ztsmm                 2/2     Running   0          83m
+kube-system   coredns-664b6f5f5c-bttp4       1/1     Running   0          86m
+kube-system   coredns-664b6f5f5c-r2cpt       1/1     Running   0          86m
+kube-system   kube-proxy-jwwh5               1/1     Running   0          83m
+kube-system   kube-proxy-nvtrg               1/1     Running   0          83m
+udacity       blue-7fb6ff6dd9-5zzpg          1/1     Running   0          64m
+udacity       blue-7fb6ff6dd9-9t7qz          1/1     Running   0          64m
+udacity       blue-7fb6ff6dd9-rw95m          1/1     Running   0          64m
+udacity       canary-v1-bdb7f878d-ffdj9      1/1     Running   0          64m
+udacity       canary-v1-bdb7f878d-hp9bp      1/1     Running   0          64m
+udacity       canary-v1-bdb7f878d-ls2gl      1/1     Running   0          64m
+udacity       canary-v2-755b8b7b9b-55mt9     1/1     Running   0          30s
+udacity       canary-v2-755b8b7b9b-f454r     1/1     Running   0          10s
+udacity       canary-v2-755b8b7b9b-z96vp     1/1     Running   0          21s
+udacity       hello-world-5999896d6f-mb2vn   1/1     Running   0          53m

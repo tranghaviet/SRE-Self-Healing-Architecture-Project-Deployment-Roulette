@@ -15,3 +15,12 @@ kubectl logs hello-world-5999896d6f-mb2vn
 ```
 
 Result `hello-world pod healthy.png`
+
+# Step 2: Canary Deployments
+
+Comment out the current version of the canary app
+```sh
+sed -i 's/version: "1.0"/# version: "1.0"/' starter/apps/canary/canary-svc.yml
+```
+
+Please check result files: `canary2.txt`, `canary.txt`, `canary.sh`.
