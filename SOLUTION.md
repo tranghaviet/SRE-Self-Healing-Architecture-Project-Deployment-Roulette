@@ -101,3 +101,7 @@ kubectl top pods --namespace udacity --sort-by=memory --containers
 kubectl delete pod bloaty-mcbloatface-79dd894bb-4bwl7 # POD name
 kubectl top pods --namespace udacity --sort-by=memory --containers
 ```
+
+# Step 6: Diagramming the Cloud Landscape
+
+Please check `step-6` folder. Diagram can be opened at https://app.diagrams.net/.
