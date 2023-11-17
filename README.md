@@ -27,8 +27,8 @@ The AWS environment will be built in the `us-east-2` region of AWS
 
 3. Deploy Terraform infrastructure
     - `cd starter/infra`
-    - `terraform init`
-    - `terraform apply`
+    - `terraform init -upgrade`
+    - `terraform apply -auto-approve`
 
 5. Setup Kubernetes config so you can ping the EKS cluster
     - `aws eks --region us-east-2 update-kubeconfig --name udacity-cluster`
@@ -90,7 +90,7 @@ The AWS environment will be built in the `us-east-2` region of AWS
     3. Provide the output of `kubectl get pods --all-namespaces` to show deployed services
 
 5. *[Observability with metrics]*
- 
+
    You have realized there is no observability in the Kubernetes environment. You suspect there is a service
    unnecessarily consuming too much memory and needs to be removed
     1. Install a metrics server on the kubernetes cluster and identify the service using up the most memory
@@ -99,7 +99,7 @@ The AWS environment will be built in the `us-east-2` region of AWS
     2. Delete the service with the most memory usage from the cluster
         - Take a screenshot of the output of the same metrics command to a file called `after.png`
 
-6. *[Diagramming the cloud landscape with Bob Ross]*  
+6. *[Diagramming the cloud landscape with Bob Ross]*
    In order to improve the onboarding of future developers. You decide to create an architecture diagram so that they
    don't have to learn the lessons you have learnt the hard way.
     1. Create an architectural diagram that accurately describes the current status of your AWS environment.
