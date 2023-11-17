@@ -87,3 +87,7 @@ Edit `starter/apps/bloatware/bloatware.yml`
               cpu: "100m"
 ...
 ```
+
+3. Enable CPU-based autoscaling: If our Kubernetes cluster supports autoscaling, we can enable CPU-based autoscaling. This will automatically add more nodes to our cluster when the CPU utilization exceeds a certain threshold. This can help ensure that we have enough CPU capacity to schedule our pods.
+
+Apply the `starter/apps/bloatware/scale.yml`.
