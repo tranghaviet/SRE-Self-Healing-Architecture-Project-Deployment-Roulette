@@ -13,7 +13,7 @@ resource "aws_route53_record" "blue" {
 }
 
 resource "aws_route53_zone" "private_dns" {
-  name    = "udacityproject"
+  name    = "udacityproject.com"
   comment = "DNS for Udacity Projects"
 
   vpc {

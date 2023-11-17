@@ -24,3 +24,29 @@ sed -i 's/version: "1.0"/# version: "1.0"/' starter/apps/canary/canary-svc.yml
 ```
 
 Please check result files: `canary2.txt`, `canary.txt`, `canary.sh`.
+
+# Step 3: Blue-green Deployments
+
+| Note: The resource `aws_route53_zone` had name `udacityproject` but the project
+| wants to use `udacityproject.com` so we have to update it to `udacityproject.com`
+| in `starter/infra/dns.tf`
+
+```
+./blue-green.sh
+cd starter/infra
+# Check wether terraform plan is correct
+terraform plan
+terraform apply -auto-approve
+# Get services
+kubectl get svc
+```
+
+Fix DNS record
+
+```sh
+sed -i 's/udacityproject/udacityproject.com/' `starter/infra/dns.tf`
+terraform init -reconfigure -upgrade
+terraform apply -auto-approve
+```
+
+Connect to EC2 `curl-instance` then run `for i in {1..10}; do curl blue-green.udacityproject.com; sleep 2; done`
