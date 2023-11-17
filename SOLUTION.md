@@ -50,3 +50,40 @@ terraform apply -auto-approve
 ```
 
 Connect to EC2 `curl-instance` then run `for i in {1..10}; do curl blue-green.udacityproject.com; sleep 2; done`
+
+# Step 4: Node Elasticity
+Fail reason: `bloatware-fail-reason.png`
+
+After we identify the problem using `kubectl describe pod bloaty-mcbloatface-66dd4b7b5b-24cqf` command we know the reason is
+
+```
+0/2 nodes are available: 2 Insufficient cpu. preemption: 0/2 nodes are available: 2 No preemption victims found for incoming pod..
+```
+
+To resolve this problem we have a few options
+
+1. Increase the CPU capacity of the cluster node size in `starter/infra/eks.tf`
+
+```
+nodes_desired_size = 4
+nodes_max_size     = 10
+nodes_min_size     = 1
+```
+
+Then run terraform apply again
+
+```sh
+terraform init -reconfigure -upgrade
+terraform apply -auto-approve
+```
+
+2. Modify the resource requirements of our pod: If our pod's CPU resource requests are too high, we can try reducing them to make it easier for the scheduler to find available nodes. We can modify the section of our pod's YAML file and decrease section of our pod's YAML file and decrease the `resources` value: `requests.cpu`
+
+Edit `starter/apps/bloatware/bloatware.yml`
+
+```
+...
+              memory: "100Mi"
+              cpu: "100m"
+...
+```

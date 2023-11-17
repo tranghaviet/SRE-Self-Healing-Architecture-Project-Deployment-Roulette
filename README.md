@@ -81,7 +81,7 @@ The AWS environment will be built in the `us-east-2` region of AWS
 
 4. *[Node elasticity]*
 
-   A microservice `bloaty-mcface` must be deployed for compliance reasons before the company can continue business.
+   A microservice `bloaty-mcbloatface` must be deployed for compliance reasons before the company can continue business.
    Ensure it is deployed successfully
     1. Deploy `apps/bloatware` microservice
     2. Identify if the application deployment was successful and if not resolve any issues found
